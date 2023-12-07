@@ -30,6 +30,10 @@ Usage from command line
     unsplash <word>
     unsplash orange
 
+    # as script
+    python unsplash_get.py <word>
+    python unsplash_get.py orange
+
 Usage from Python
 **************************
 

@@ -80,13 +80,14 @@ def example() -> None:
 
 def main(args=None) -> None:
     """main cli function"""
+    if os.name == 'nt':
+        os.system('color')
     if args is None:
         args = sys.argv[1:]
         if not args:
-            print('usage: unsplash_get.py <word>')
+            print(f"usage:\n    {colored('unsplash <word>', 'GREEN')}")
+            print(f"example:\n    {colored('unsplash cherry', 'GREEN')}")
             sys.exit(1)
-    if os.name == 'nt':
-        os.system('color')
     word = args[0]
     urls = search(word)
     print(f"word: {colored(word, 'GREEN')}, unique urls found: {len(urls)}")
@@ -101,4 +102,4 @@ def main(args=None) -> None:
 
 
 if __name__ == "__main__":
-    example()
+    main()
