@@ -1,2 +1,2 @@
-from .unsplash_get import main
+from unsplash_get.unsplash_get import main
 main()

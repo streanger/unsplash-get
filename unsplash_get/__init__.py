@@ -1,1 +1,1 @@
-from .unsplash_get import save_img, search, example
+from unsplash_get.unsplash_get import save_img, get_image, search, example, main
