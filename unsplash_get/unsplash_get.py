@@ -45,7 +45,7 @@ def save_img(url: str, path: str) -> bool:
 def get_image(url: str) -> bytes:
     response = requests.get(url)
     if response.status_code != 200:
-        return False
+        return b''
     return response.content
 
 
@@ -73,13 +73,12 @@ def search(phrase: str) -> list:
     return urls
 
 
-def example():
+def example() -> None:
     """example of use"""
     main(args=['cherry'])
-    return None
 
 
-def main(args=None):
+def main(args=None) -> None:
     """main cli function"""
     if args is None:
         args = sys.argv[1:]
@@ -95,10 +94,10 @@ def main(args=None):
     directory.mkdir(parents=True, exist_ok=True)
     for index, url in enumerate(urls, start=1):
         out = f'{word}_{index:03}.jpg'
-        path = directory / out
+        path = str(directory / out)
         status = save_img(url, path)
         color = 'GREEN' if status else 'RED'
-        print(f"{index:03}.{colored(url, 'CYAN')} -> {path} ({colored(status, color)})")
+        print(f"{index:03}.{colored(url, 'CYAN')} -> {path} ({colored(str(status), color)})")
 
 
 if __name__ == "__main__":
