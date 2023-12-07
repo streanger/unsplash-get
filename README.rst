@@ -9,7 +9,20 @@ Install
 
     pip install unsplash_get
 
-General usage
+Usage from command line
+======================
+
+.. code-block:: bash
+
+    # as module
+    python -m unsplash_get <word>
+    python -m unsplash_get orange
+
+    # as entry point
+    unsplash <word>
+    unsplash orange
+
+Usage from Python
 ======================
 
 .. code-block:: python
@@ -27,6 +40,12 @@ General usage
 
 Load image to variable
 ======================
+
+it requires additional libraries (`PIL` and/or `numpy`), which could be installed with:
+
+.. code-block:: bash
+
+    pip install Pillow numpy
 
 .. code-block:: python
 
@@ -46,7 +65,13 @@ Load image to variable
     # get list of urls
     word = 'orange'
     urls = search(word)
+    url = url[4]
 
     # read image
-    img = load_img(urls[0])
-    print(img.shape)
+    pil_img = load_img_to_pil(url)
+    numpy_img = load_image_to_numpy(url)
+
+Screenshots
+======================
+
+.. image:: https://raw.githubusercontent.com/streanger/unsplash-get/master/images/unsplash1.png

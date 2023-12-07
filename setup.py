@@ -1,5 +1,3 @@
-import sys
-import os
 import setuptools
 
 with open("README.rst", "r") as fh:
@@ -7,13 +5,13 @@ with open("README.rst", "r") as fh:
     
 setuptools.setup(
     name='unsplash_get',
-    version='0.1.0',
+    version='0.1.1',
     keywords="unsplash scrape stock images",
     author="streanger",
     author_email="divisionexe@gmail.com",
     description="unsplash srape tool",
     long_description=long_description,
-    long_description_content_type="text/markdown",
+    long_description_content_type="text/x-rst",
     url="https://github.com/streanger/unsplash_get",
     packages=['unsplash_get',],
     license='MIT',
@@ -23,4 +21,9 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    entry_points={
+        "console_scripts": [
+            "unsplash=unsplash_get:main",
+        ]
+    },
 )
