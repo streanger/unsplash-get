@@ -39,16 +39,22 @@ Usage from Python
 
 .. code-block:: python
 
+    from pathlib import Path
     from unsplash_get import search, save_img
     
     # get list of urls
     word = 'orange'
     urls = search(word)
     
+    # create directory
+    directory = Path(word)
+    directory.mkdir(exist_ok=True)
+
     # save images
     for index, url in enumerate(urls, start=1):
-        file = f'{word}_{index:03}.jpg'
-        save_img(url, file)
+        path = str(directory / f'{word}_{index:03}.jpg')
+        status = save_img(url, path)
+        print(f"{index:03}.{url} -> {path} ({status})")
 
 Load image to variable
 **************************
