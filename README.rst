@@ -35,7 +35,7 @@ Usage from command line
     python unsplash_get.py orange
 
 Usage from Python (save images)
-**************************
+*********************************************
 
 .. code-block:: python
 
@@ -57,7 +57,7 @@ Usage from Python (save images)
         print(f"{index:03}.{url} -> {path} ({status})")
 
 Usage from Python (load image to variable)
-**************************
+*********************************************
 
 it requires additional libraries (**PIL** and/or **numpy**), which could be installed with
 
