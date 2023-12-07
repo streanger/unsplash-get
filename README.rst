@@ -34,18 +34,18 @@ Usage from command line
     python unsplash_get.py <word>
     python unsplash_get.py orange
 
-Usage from Python
+Usage from Python (save images)
 **************************
 
 .. code-block:: python
 
     from pathlib import Path
     from unsplash_get import search, save_img
-    
+
     # get list of urls
     word = 'orange'
     urls = search(word)
-    
+
     # create directory
     directory = Path(word)
     directory.mkdir(exist_ok=True)
@@ -56,21 +56,23 @@ Usage from Python
         status = save_img(url, path)
         print(f"{index:03}.{url} -> {path} ({status})")
 
-Load image to variable
+Usage from Python (load image to variable)
 **************************
 
-it requires additional libraries (`PIL` and/or `numpy`), which could be installed with:
+it requires additional libraries (*PIL* and/or *numpy*), which could be installed with
 
 .. code-block:: bash
 
     pip install Pillow numpy
+
+example code
 
 .. code-block:: python
 
     import io
     import numpy as np
     from PIL import Image
-    from unsplash_get import search, load_img
+    from unsplash_get import search, get_image
 
     def load_img_to_pil(data):
         img = Image.open(io.BytesIO(data))
@@ -83,11 +85,12 @@ it requires additional libraries (`PIL` and/or `numpy`), which could be installe
     # get list of urls
     word = 'orange'
     urls = search(word)
-    url = url[4]
+    url = urls[4]
 
     # read image
-    pil_img = load_img_to_pil(url)
-    numpy_img = load_image_to_numpy(url)
+    data = get_image(url)
+    pil_img = load_img_to_pil(data)
+    numpy_img = load_image_to_numpy(data)
 
 Screenshots
 **************************

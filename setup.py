@@ -5,7 +5,7 @@ with open("README.rst", "r") as fh:
     
 setuptools.setup(
     name='unsplash_get',
-    version='0.1.1',
+    version='0.1.2',
     keywords="unsplash scrape stock images",
     author="streanger",
     author_email="divisionexe@gmail.com",
