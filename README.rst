@@ -59,7 +59,7 @@ Usage from Python (save images)
 Usage from Python (load image to variable)
 **************************
 
-it requires additional libraries (*PIL* and/or *numpy*), which could be installed with
+it requires additional libraries (**PIL** and/or **numpy**), which could be installed with
 
 .. code-block:: bash
 
