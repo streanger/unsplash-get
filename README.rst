@@ -3,14 +3,22 @@ unsplash_get
 Script for scraping unsplash. Only for educational purposes.
 
 Install
-======================
+**************************
 
-.. code-block:: python
+from pypi
 
-    pip install unsplash_get
+.. code-block:: bash
+
+    pip install unsplash-get
+
+from github
+
+.. code-block:: bash
+
+    pip install git+https://github.com/streanger/unsplash-get.git
 
 Usage from command line
-======================
+**************************
 
 .. code-block:: bash
 
@@ -23,7 +31,7 @@ Usage from command line
     unsplash orange
 
 Usage from Python
-======================
+**************************
 
 .. code-block:: python
 
@@ -33,13 +41,13 @@ Usage from Python
     word = 'orange'
     urls = search(word)
     
-    # store images if needed
-    for key, url in enumerate(urls[:10]):
-        file = '{}_{:03}.jpg'.format(word, key)
+    # save images
+    for index, url in enumerate(urls, start=1):
+        file = f'{word}_{index:03}.jpg'
         save_img(url, file)
 
 Load image to variable
-======================
+**************************
 
 it requires additional libraries (`PIL` and/or `numpy`), which could be installed with:
 
@@ -72,6 +80,6 @@ it requires additional libraries (`PIL` and/or `numpy`), which could be installe
     numpy_img = load_image_to_numpy(url)
 
 Screenshots
-======================
+**************************
 
 .. image:: https://raw.githubusercontent.com/streanger/unsplash-get/master/images/unsplash1.png
