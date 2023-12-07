@@ -25,7 +25,7 @@ def get_image(url: str) -> bytes:
 
 def search(phrase: str) -> list:):
     """get urls of unsplash images for specified phrase"""
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0' }
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
     search_url = 'https://unsplash.com/s/photos/' + phrase
     res = requests.get(search_url, headers=headers)
     soup = bs(res.text, "lxml")
