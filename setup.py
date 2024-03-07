@@ -12,7 +12,7 @@ setuptools.setup(
     description="unsplash srape tool",
     long_description=long_description,
     long_description_content_type="text/x-rst",
-    url="https://github.com/streanger/unsplash_get",
+    url="https://github.com/streanger/unsplash-get",
     packages=['unsplash_get',],
     license='MIT',
     install_requires=['requests', 'lxml', 'beautifulsoup4'],
